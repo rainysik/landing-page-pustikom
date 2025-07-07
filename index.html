@@ -107,14 +107,14 @@
             <p class="text-sm font-medium text-[#006569]">UNIVERSITAS NEGERI JAKARTA</p>
           </div>
         </div>
-        <nav class="hidden xl:flex force-desktop-nav:flex space-x-6 text-sm items-center">
+        <nav class="hidden md:flex space-x-6 text-sm items-center">
           <a href="#beranda" class="hover:text-[#006569] font-medium hover:border-b-2 hover:border-[#006569] pb-1"><i class="fas fa-home mr-1"></i> Beranda</a>
           <a href="#tentang" class="hover:text-[#006569] font-medium hover;border-b-2 hover:border-[#006569] pb-1"><i class="fas fa-info-circle mr-1"></i> Tentang</a>
           <a href="#ruangan" class="hover:text-[#006569] font-medium hover;border-b-2 hover;border-[#006569] pb-1"><i class="fas fa-door-open mr-1"></i> Ruangan</a>
           <a href="#kontak" class="hover:text-[#006569] font-medium hover;border-b-2 hover;border-[#006569] pb-1"><i class="fas fa-phone-alt mr-1"></i> Kontak</a>
         </nav>
         <!-- Tombol Toggle -->
-        <div class="flex xl:hidden">
+        <div class="flex md:hidden">
         <button id="menu-toggle" class="text-[#006569] fixed top-5 right-4 z-50">
           <!-- Ikon Hamburger -->
           <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -127,7 +127,7 @@
         </button>
       </div>
       <!-- Mobile Nav -->
-      <nav id="mobile-nav" class="opacity-0 pointer-events-none transition-all duration-150 transform scale-95 absolute top-16 right-4 w-56 bg-white shadow-2xl border border-gray-200 text-[#0f172a] flex flex-col space-y-4 text-base px-6 py-6 rounded-lg z-40 xl:hidden force-desktop-nav:hidden">
+      <nav id="mobile-nav" class="opacity-0 pointer-events-none transition-all duration-150 transform scale-95 absolute top-16 right-4 w-56 bg-white shadow-2xl border border-gray-200 text-[#0f172a] flex flex-col space-y-4 text-base px-6 py-6 rounded-lg z-40">
         <a href="#beranda" class="block hover:underline">Beranda</a>
         <a href="#tentang" class="block hover:underline">Tentang</a>
         <a href="#ruangan" class="block hover:underline">Ruangan</a>
@@ -484,14 +484,6 @@
           { root: null, rootMargin: '-50% 0px -50% 0px', threshold: 0 }
         );
         sections.forEach((section) => observer.observe(section));
-
-        // Paksa nav desktop di Android mode desktop
-        if (
-          /Android/i.test(navigator.userAgent) && 
-          window.innerWidth >= 1024
-        ) {
-          document.documentElement.classList.add('force-desktop-nav');
-        }
       });
 
       // Mobile menu toggle dengan animasi + hamburger ↔ silang
